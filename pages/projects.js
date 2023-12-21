@@ -15,7 +15,7 @@ export default function Projects({ projects }) {
 
       <div className="flex flex-col items-center">
         <span className="m-3 flex font-semibold text-xl">
-          총 프로젝트 : {projects.results.length ?? 0}개
+          총 프로젝트 : {projects.results?.length}개
         </span>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
