@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import { TOKEN, DATABASE_ID } from "../config";
 import ProjectItem from "@/components/projects/project-item";
 
-export default function Projects({ data }) {
+export default function Projects({ projects }) {
   return (
     <Layout>
       <Head>
@@ -15,11 +15,11 @@ export default function Projects({ data }) {
 
       <div className="flex flex-col items-center">
         <span className="m-3 flex font-semibold text-xl">
-          총 프로젝트 : {data.length}개
+          총 프로젝트 : {projects.results.length}개
         </span>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {data.map((x) => (
+          {projects.results.map((x) => (
             <ProjectItem data={x} key={x.id} />
           ))}
         </div>
@@ -54,8 +54,6 @@ export async function getStaticProps() {
   );
 
   const projects = await res.json();
-  console.log(projects);
-  const data = projects.results;
 
-  return { props: { data } };
+  return { props: { projects }, revalidate: 1 };
 }
