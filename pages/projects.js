@@ -14,13 +14,14 @@ export default function Projects({ projects }) {
       </Head>
 
       <div className="flex flex-col items-center">
-        {/* <span className="m-3 flex font-semibold text-xl">
-          총 프로젝트 : {projects.results.length}개
-        </span> */}
+        <span className="m-3 flex font-semibold text-xl">
+          총 프로젝트 : {projects.results?.length}개
+        </span>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {projects.results &&
-            projects.results.map((x) => <ProjectItem data={x} key={x.id} />)}
+          {projects.results?.map((x) => (
+            <ProjectItem data={x} key={x.id} />
+          ))}
         </div>
       </div>
     </Layout>
@@ -51,7 +52,9 @@ export async function getStaticProps() {
     `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
     options
   );
+
   const projects = await res.json();
+  if (!projects) return;
 
   return { props: { projects } };
 }
