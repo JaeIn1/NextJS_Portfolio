@@ -19,7 +19,7 @@ export default function Projects({ data }) {
         </span>
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {data?.map((x) => (
+          {data.map((x) => (
             <ProjectItem data={x} key={x.id} />
           ))}
         </div>
@@ -54,8 +54,8 @@ export async function getStaticProps() {
   );
 
   const projects = await res.json();
+  console.log(projects);
   const data = projects.results;
-  console.log(data);
 
   return { props: { data } };
 }
