@@ -19,9 +19,8 @@ export default function Projects({ projects }) {
         </span> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {projects.results.map((x) => (
-            <ProjectItem data={x} key={x.id} />
-          ))}
+          {projects.results &&
+            projects.results.map((x) => <ProjectItem data={x} key={x.id} />)}
         </div>
       </div>
     </Layout>
