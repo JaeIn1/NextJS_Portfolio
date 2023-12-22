@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Layout from "../components/Layout";
-import { TOKEN, DATABASE_ID } from "../config";
+// import { TOKEN, DATABASE_ID } from "../config";
 import ProjectItem from "@/components/projects/project-item";
 
 export default function Projects({ projects }) {
@@ -35,7 +35,7 @@ export async function getStaticProps() {
       Accept: "application/json",
       "Notion-Version": "2022-02-22",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
+      Authorization: `Bearer secret_FMYp1XHg0CpYvURB3QfULkFmtLk7AT5QLRyjwdS5pGM`,
     },
     body: JSON.stringify({
       sorts: [
@@ -49,7 +49,7 @@ export async function getStaticProps() {
   };
 
   const res = await fetch(
-    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
+    `https://api.notion.com/v1/databases/7a4b268e8eb142218001f579a2f81b68/query`,
     options
   );
 
