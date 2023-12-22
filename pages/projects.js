@@ -28,7 +28,7 @@ export default function Projects({ projects }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const options = {
     method: "POST",
     headers: {
@@ -56,7 +56,8 @@ export async function getServerSideProps() {
   const projects = await res.json();
 
   return {
-    props: { projects }, // will be passed to the page component as props
+    props: { projects },
+    revalidate: 1, // will be passed to the page component as props
     // getStaticProps() 메소드를 사용한다면 revalidate 로 데이터 변경시 갱신가능!
     // revalidate: 1 // 데이터 변경이 있으면 갱신 1초 마다
   };
