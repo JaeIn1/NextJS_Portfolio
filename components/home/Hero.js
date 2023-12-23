@@ -6,7 +6,7 @@ export default function Hero() {
     <>
       <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
         <h1 className="title-font sm:text-4xl text-3xl mb-6 font-medium text-gray-900">
-          꾸준히 성정하고 목표 달성을 위해 포기하지 않는 프론트엔드 개발자,
+          꾸준히 성장하고 목표 달성을 위해 포기하지 않는 프론트엔드 개발자,
           이재인입니다.
         </h1>
         <p className="text-xl text-gray-900">
@@ -15,11 +15,9 @@ export default function Hero() {
         </p>
         <br />
         <p className="text-xl text-gray-900 mb-8">
-          프론트엔드에 대한 내 관심은 그저 기술을 사용하는 것 이상으로,
-          사용자와의 상호작용을 통해 새로운 경험을 만들어내는 과정에 있습니다.
-          새로운 기술이나 트렌드가 등장할 때마다, 제 눈은 항상 그것에 집중되어
-          있습니다. 그리고 이러한 흥미로운 도전에 대응하기 위해 끊임없이
-          학습하고 있습니다.
+          새로운 기술이나 트렌드가 생길때마다 꾸준히 학습을 하며, 팀원들과의
+          적극적인 소통으로 함께 성장할 수 있는 “환경”을 만들어 함께 나아갈 수
+          있습니다.
         </p>
         <p className="flex justify-center">
           <Link href={"/projects"} legacyBehavior>
